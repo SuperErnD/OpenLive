@@ -1,0 +1,4 @@
+database.sqlite
+Web/storage/sessions/*
+composer.lock
+
