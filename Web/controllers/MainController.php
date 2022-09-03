@@ -4,9 +4,8 @@ namespace Diman\Openlive\Controllers;
 use Latte\Engine;
 class MainController extends BaseController{
 
-    public function index() {
-       
+    public function indexAction() {
+
         include '/../views/index.php';
     }
 }
-        

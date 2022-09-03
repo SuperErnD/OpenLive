@@ -2,7 +2,7 @@
 namespace Diman\Openlive\Controllers;
 
 
-class BaseController { // база? да для $this->db оке чек тг
+class BaseController {
     protected $db = null;
     public function __construct($db) {
         $this->db = $db;
