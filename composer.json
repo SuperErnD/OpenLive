@@ -3,13 +3,12 @@
     "description": "A new live for Windows Live",
     "type": "project",
     "require": {
-        "tracy/tracy": "^2.9",
-        "latte/latte": "^3.0"
+        "tracy/tracy": "^2.9"
     },
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Diman\\Openlive\\": "MainSite/"
+            "Diman\\Openlive\\": "Web/"
         }
     },
     "authors": [
