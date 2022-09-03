@@ -1,0 +1,20 @@
+{
+    "name": "diman/openlive",
+    "description": "A new live for Windows Live",
+    "type": "project",
+    "require": {
+        "tracy/tracy": "^2.9",
+        "latte/latte": "^3.0"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Diman\\Openlive\\": "MainSite/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Diman"
+        }
+    ]
+}
