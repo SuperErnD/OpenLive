@@ -1,5 +1,5 @@
 <?php
-namespace Diman\Openlive\Views;
+namespace Diman\Openlive\views;
 
 class Render{
     public $path;

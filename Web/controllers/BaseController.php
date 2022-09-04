@@ -1,5 +1,5 @@
 <?php
-namespace Diman\Openlive\Controllers;
+namespace Diman\Openlive\controllers;
 
 
 class BaseController {
@@ -14,7 +14,7 @@ class BaseController {
     }
 
     public function loadModel($name){
-        $path = "Diman\Openlive\Models\\" . $name . "Model";
+        $path = "Diman\Openlive\models\\" . $name . "Model";
         if (class_exists($path)){
             return new $path($this->db);
         }

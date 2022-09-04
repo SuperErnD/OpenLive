@@ -1,6 +1,6 @@
 <?php
 
-namespace Diman\Openlive\Models;
+namespace Diman\Openlive\models;
 
 class MainModel extends BaseModel{
     

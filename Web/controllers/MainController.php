@@ -1,6 +1,6 @@
 <?php
-namespace Diman\Openlive\Controllers;
-use Diman\Openlive\Views\Render;
+namespace Diman\Openlive\controllers;
+use Diman\Openlive\views\Render;
 class MainController extends BaseController{
 
     public function indexAction() {

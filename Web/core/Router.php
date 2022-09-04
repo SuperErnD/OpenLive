@@ -57,7 +57,7 @@ class Router {
                 readfile($this->file);
                 return null;
             }
-            $path = "Diman\Openlive\Controllers\\" . $this->params['controller'] . 'Controller';
+            $path = "Diman\Openlive\controllers\\" . $this->params['controller'] . 'Controller';
             if(class_exists($path)) {
                 $action = $this->params['action']."Action";
                 if (method_exists($path, $action)){

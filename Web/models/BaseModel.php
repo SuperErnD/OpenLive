@@ -1,5 +1,5 @@
 <?php
-namespace Diman\Openlive\Models;
+namespace Diman\Openlive\models;
 
 class BaseModel{
     protected $db = null;

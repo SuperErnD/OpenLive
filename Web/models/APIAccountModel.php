@@ -1,6 +1,6 @@
 <?php
 
-namespace Diman\Openlive\Models;
+namespace Diman\Openlive\models;
 
 class APIAccountModel extends BaseModel{
     public function register(){
