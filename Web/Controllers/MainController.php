@@ -1,11 +1,10 @@
 <?php
 namespace Diman\Openlive\Controllers;
-// победа, подрубаю Latte
-use Latte\Engine;
+use Diman\Openlive\Views\Render;
 class MainController extends BaseController{
 
     public function indexAction() {
-
-        include __DIR__ . '/../views/index.php';
+        $render=new Render("index");
+        echo $render->render([]);
     }
 }

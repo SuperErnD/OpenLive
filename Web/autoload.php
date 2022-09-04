@@ -8,7 +8,9 @@ if ($phpversion < 8.0 && $phpversion >= 7.0){
 
 spl_autoload_register(function ($class) {
 	$path = str_replace("Diman/Openlive/", "", str_replace("\\", "/", $class.".php"));
-    if (file_exists($path)){
+    echo $path;
+	if (file_exists($path)){
 		require $path;
 	}
+	
 });

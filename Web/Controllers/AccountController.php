@@ -1,13 +1,16 @@
 <?php
 namespace Diman\Openlive\Controllers;
+use Diman\Openlive\Views\Render;
 
 class AccountController extends BaseController {
 
     public function loginAction() {
-        include __DIR__ . '/../views/login.php';
+        $render=new Render("login");
+        echo $render->render([]);
     }
 
     public function registerAction() {
-        include __DIR__ . '/../views/register.php';
+        $render=new Render("register");
+        echo $render->render([]);
     }
 }
