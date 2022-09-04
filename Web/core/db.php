@@ -9,7 +9,26 @@ class DatabaseConnection {
         $this->db = new \PDO($DatabaseURL);
     }
 
-    public function query($sql){
-        $this->db->query($sql); // bb я писать игру, если хочешь помочь то в мг сри что тг* tg 
+    public function query($sql, $params){
+        $query=$this->db->prepare($sql);
+        if (!empty($params)){
+            foreach ($params as $key => $value) {
+                $this->db->bindValue(":".$key, $value);
+            }
+        }
+        if (!$query){
+            throw new \LogicException("Query return is false");
+        }
+        $query->execure();
+        return $query;
     }
+
+    public function row($sql, $params){
+        return $this->query($sql, $params)->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function column($sql, $params){
+        return $this->query($sql, $params)->fetchColumn(\PDO::FETCH_ASSOC);
+    }
+
 }

@@ -61,7 +61,7 @@ class Router {
             if(class_exists($path)) {
                 $action = $this->params['action']."Action";
                 if (method_exists($path, $action)){
-                    $controller = new $path($this->db);
+                    $controller = new $path($this->params, $this->db);
                     $controller->$action();
                 } else {
                     exit("Not Found Action " . strval($action)); // ошибку дает, странно

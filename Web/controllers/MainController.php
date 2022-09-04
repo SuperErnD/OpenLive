@@ -6,6 +6,6 @@ class MainController extends BaseController{
 
     public function indexAction() {
 
-        include '/../views/index.php';
+        include __DIR__ . '/../views/index.php';
     }
 }
