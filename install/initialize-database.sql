@@ -8,13 +8,17 @@ CREATE TABLE IF NOT EXISTS ApiKeys (
 CREATE TABLE IF NOT EXISTS Users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     email VARCHAR(128) NOT NULL DEFAULT "deleted@openlive.org",
+    name VARCHAR(64) NOT NULL,
+    surname VARCHAR(64) NOT NULL,
+    birthyear INTEGER NOT NULL DEFAULT 1990,
     password VARCHAR(128) NOT NULL,
+    gender VARCHAR(1) NOT NULL DEFAULT "m",
+    country VARCHAR(2) NOT NULL DEFAULT "US",
     /* TODO */
-    isVerificated BOOLEAN NOT NULL CHECK (isVerificated IN (0, 1)),
+    Verificated BOOLEAN NOT NULL CHECK (Verificated IN (0, 1)),
     /* TODO */
-    isDisabled BOOLEAN NOT NULL CHECK (isDisabled IN (0, 1)),
-    gender BOOLEAN NOT NULL CHECK (gender IN (0, 1)),
-    authToken VARCHAR(7168) NOT NULL
+    Disabled BOOLEAN NOT NULL CHECK (Disabled IN (0, 1)),
+    authToken TEXT NOT NULL
 );
 
 /* Open Live Messenger tables */

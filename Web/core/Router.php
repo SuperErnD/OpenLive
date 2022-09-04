@@ -1,6 +1,7 @@
 <?php
 namespace Diman\Openlive\core;
 use Diman\Openlive\core\Database;
+use Diman\Openlive\core\jwt_mvc;
 
 class Router {
 
@@ -8,11 +9,13 @@ class Router {
     protected $params = [];
     protected $file = "";
     protected $db = null;
+    protected $jwt = null;
 
     public function __construct($routers) {
         //var_dump($debugger);
         //$this->debugger = $debugger;
         $this->db = new Database();
+        $this->jwt = new jwt_mvc;
         foreach($routers as $key => $val) {
             $this->add($key, $val);
         }
@@ -61,7 +64,7 @@ class Router {
             if(class_exists($path)) {
                 $action = $this->params['action']."Action";
                 if (method_exists($path, $action)){
-                    $controller = new $path($this->params, $this->db);
+                    $controller = new $path($this->params, $this->db, $this->jwt);
                     $controller->$action();
                 } else {
                     exit("Not Found Action " . strval($action)); // ошибку дает, странно

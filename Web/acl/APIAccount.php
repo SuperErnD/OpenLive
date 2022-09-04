@@ -1,7 +1,8 @@
 <?php
 $acl = [
     "all" => [
-        
+        "register",
+        "login"
     ],
     "authorize" => [
         

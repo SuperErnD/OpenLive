@@ -2,15 +2,18 @@
 namespace Diman\Openlive\controllers;
 use Diman\Openlive\views\Render;
 
+
 class BaseController {
     protected $db = null;
     protected $route = null;
     protected $model = null;
     protected $acl = null;
+    protected $jwt = null;
 
-    public function __construct($route, $db) {
+    public function __construct($route, $db, $jwt) {
         $this->route = $route;
         $this->db = $db;
+        $this->jwt = $jwt;
         if(!$this->checkAcl()){
             echo $this->render("errors/403", []);
             http_response_code(403);
@@ -23,7 +26,7 @@ class BaseController {
     public function loadModel($name){
         $path = "Diman\Openlive\models\\" . $name . "Model";
         if (class_exists($path)){
-            return new $path($this->db);
+            return new $path($this->db, $this->jwt);
         }
     }
 

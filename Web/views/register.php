@@ -60,7 +60,7 @@
                </div>
                <div id="signinsec" class="signintext row">
                   <p>
-                     If you use <strong>Hotmail</strong>, <strong>Messenger</strong>, or <strong>Xbox LIVE</strong>, you already have a Windows Live ID.
+                     If you use <strong>OpenMail</strong>, <strong>Messenger</strong>, or <strong>Xbox LIVE</strong>, you already have a Windows Live ID.
                      <a href="https://web.archive.org/web/20110811024957/https://login.live.com/login.srf?wa=wsignin1.0&amp;rpsnv=11&amp;ct=1313030998&amp;rver=6.1.6206.0&amp;wp=MBI_SSL&amp;wreply=https:%2F%2Fsignup.live.com%2Fsignup.aspx%3Flic%3D1%26ne%3D1&amp;lc=1033&amp;id=68692&amp;wlu=1" title="Sign in">
                      Sign in</a>
                   </p>
@@ -90,8 +90,7 @@
                      <div id="memnamecont">
                         <input id="imembernamelive" name="imembernamelive" type="text" maxlength="64" value="" onfocus="SignUp.Fields[FT.MN].evt_Live_onfocus(event)" onchange="SignUp.Fields[FT.MN].evt_Live_onchange(event)" onblur="SignUp.Fields[FT.MN].evt_Live_onblur(event)"><span id="mnat">@</span>
                         <select id="idomain" name="idomain" onchange="SignUp.Fields[FT.MN].evt_Domain_onchange(event)" onfocus="SignUp.Fields[FT.MN].evt_Domain_onfocus(event)">
-                           <option value="hotmail.com">hotmail.com</option>
-                           <option value="LIVE.COM">LIVE.COM</option>
+                           <option value="openmail.com">openmail.com</option>
                         </select>
                         <label for="idomain" style="display: none">Domains</label>
                      </div>
@@ -177,11 +176,11 @@
                      </p>
                      <label for="imembernameeasi">
                      Use your email address:</label>
-                     <input id="imembernameeasi" name="imembernameeasi" class="inputhint" type="text" maxlength="112" placeholder="Example: someone@example.com" onfocus="SignUp.Fields[FT.MN].evt_EASI_onfocus(event)" onblur="SignUp.Fields[FT.MN].evt_EASI_onblur(event)" onchange="SignUp.Fields[FT.MN].evt_EASI_onchange(event)"><br>
-                     <p id="livelinkctr" class="linkinline">
+                     <input id="imembernameeasi" name="imembernameeasi" class="inputhint" type="email" required maxlength="112" placeholder="Example: someone@example.com" onfocus="SignUp.Fields[FT.MN].evt_EASI_onfocus(event)" onblur="SignUp.Fields[FT.MN].evt_EASI_onblur(event)" onchange="SignUp.Fields[FT.MN].evt_EASI_onchange(event)"><br>
+                     <!-- <p id="livelinkctr" class="linkinline">
                         <a id="iliveswitch" href="#" onclick="SignUp.Fields[FT.MN].updateState(STATE.MN.Live);return false;">
                         Or get a Windows Live email address</a>
-                     </p>
+                     </p> -->
                   </div>
                   <div class="helppop" style="display: none;">
                      <div id="membernameeasihelp" class="helpctr">
@@ -198,7 +197,7 @@
                      </p>
                      <label for="iPwd">
                      Create a password:</label>
-                     <input id="iPwd" name="iPwd" type="password" onfocus="SignUp.Fields[FT.PWD].evt_onfocus(event)" onblur="SignUp.Fields[FT.PWD].evt_onblur(event)" onchange="SignUp.Fields[FT.PWD].evt_onchange(event)" onkeyup="SignUp.Fields[FT.PWD].evt_onkeyup(event)" onkeypress="SignUp.Fields[FT.PWD].evt_onkeypress(event)"><br>
+                     <input id="iPwd" name="iPwd" required type="password" minlength="6" onfocus="SignUp.Fields[FT.PWD].evt_onfocus(event)" onblur="SignUp.Fields[FT.PWD].evt_onblur(event)" onchange="SignUp.Fields[FT.PWD].evt_onchange(event)" onkeyup="SignUp.Fields[FT.PWD].evt_onkeyup(event)" onkeypress="SignUp.Fields[FT.PWD].evt_onkeypress(event)"><br>
                      <p class="hint">
                         6-character minimum; case sensitive
                      </p>
@@ -206,7 +205,7 @@
                   <div class="row">
                      <label for="iRetypePwd">
                      Retype password:</label>
-                     <input id="iRetypePwd" name="iRetypePwd" type="password" onfocus="SignUp.Fields[FT.RPWD].evt_onfocus(event)" onblur="SignUp.Fields[FT.RPWD].evt_onblur(event)" onchange="SignUp.Fields[FT.RPWD].evt_onchange(event)" onkeypress="SignUp.Fields[FT.RPWD].evt_onkeypress(event)"><br>
+                     <input id="iRetypePwd" name="iRetypePwd" type="password" minlength="6" required onfocus="SignUp.Fields[FT.RPWD].evt_onfocus(event)" onblur="SignUp.Fields[FT.RPWD].evt_onblur(event)" onchange="SignUp.Fields[FT.RPWD].evt_onchange(event)" onkeypress="SignUp.Fields[FT.RPWD].evt_onkeypress(event)"><br>
                   </div>
                   <div class="helppop" style="display: none;">
                      <div id="passwordhelp" class="helpctr">
@@ -270,14 +269,14 @@
                      </p>
                      <label for="iFirstName">
                      First name:</label>
-                     <input id="iFirstName" name="iFirstName" type="text" maxlength="40" value="" onfocus="SignUp.ShowHelp('name')" onchange="SignUp.ValidateField(this)"><br>
+                     <input id="iFirstName"required  name="iFirstName" type="text" maxlength="40" value="" onfocus="SignUp.ShowHelp('name')" onchange="SignUp.ValidateField(this)"><br>
                   </div>
                   <div class="row">
                      <p id="iLastNameError" class="error" style="display: none">
                      </p>
                      <label for="iLastName">
                      Last name:</label>
-                     <input id="iLastName" name="iLastName" type="text" maxlength="40" value="" onfocus="SignUp.ShowHelp('name')" onchange="SignUp.ValidateField(this)"><br>
+                     <input id="iLastName" required name="iLastName" type="text" maxlength="40" value="" onfocus="SignUp.ShowHelp('name')" onchange="SignUp.ValidateField(this)"><br>
                   </div>
                   <div class="helppop" style="display: none;">
                      <div id="namehelp" class="helpctr">
@@ -539,7 +538,7 @@
                         <div id="ctryhelp" class="helpctr"></div>
                      </div>
                   </div>
-                  <div id="RegionContainer" class="row" style="display: block;">
+                  <!-- <div id="RegionContainer" class="row" style="display: block;">
                      <p id="iRegionError" class="error" style="display: none;"></p>
                      <label for="iRegion">State:</label>
                      <select id="iRegion" name="iRegion">
@@ -599,11 +598,11 @@
                         <option value="36684">Wisconsin</option>
                         <option value="36927">Wyoming</option>
                      </select>
-                  </div>
+                  </div> -
                   <div id="PostalContainer" class="row" style="display: block;">
                      <p id="iZipCodeError" class="error" style="display: none;"></p>
                      <label for="iZipCode">ZIP code:</label><input type="text" id="iZipCode" name="iZipCode">
-                  </div>
+                  </div> -->
                   <div class="row">
                      <p id="profile_genderError" class="error" style="display: none">
                      </p>
@@ -614,11 +613,11 @@
                            <tr>
                               <td>
                                  <label for="iGenderMale" class="radiolabel">
-                                 <input type="radio" id="iGenderMale" class="radio" name="profile_gender" value="m" onfocus="SignUp.ShowHelp('hide');" onclick="SignUp.ShowHelp('hide');SignUp.ValidateField(this)">Male</label>
+                                 <input required type="radio" id="iGenderMale" class="radio" name="profile_gender" value="m" onfocus="SignUp.ShowHelp('hide');" onclick="SignUp.ShowHelp('hide');SignUp.ValidateField(this)">Male</label>
                               </td>
                               <td>
                                  <label for="iGenderFemale" class="radiolabel">
-                                 <input type="radio" id="iGenderFemale" class="radio" name="profile_gender" value="f" onfocus="SignUp.ShowHelp('hide');" onclick="SignUp.ShowHelp('hide');SignUp.ValidateField(this)">Female</label>
+                                 <input required type="radio" id="iGenderFemale" class="radio" name="profile_gender" value="f" onfocus="SignUp.ShowHelp('hide');" onclick="SignUp.ShowHelp('hide');SignUp.ValidateField(this)">Female</label>
                               </td>
                            </tr>
                         </tbody>
@@ -629,7 +628,7 @@
                      </p>
                      <label for="iBirthYear">
                      Birth year:</label>
-                     <input id="iBirthYear" name="iBirthYear" class="inputhint" type="text" placeholder="Example: 1990" onfocus="SignUp.HandleHintFocusOn(this,'AutoCSR_Questionnaire_Birthdate_HelpText',4);SignUp.ShowHelp('hide');" onblur="SignUp.HandleHintFocusOff(this,'AutoCSR_Questionnaire_Birthdate_HelpText',4);" onkeypress="return SignUp.OnlyNumbers(event)" onchange="SignUp.ValidateField(this)"><br>
+                     <input id="iBirthYear" name="iBirthYear" required class="inputhint" type="number" min=1900 placeholder="Example: 1990" onfocus="SignUp.HandleHintFocusOn(this,'AutoCSR_Questionnaire_Birthdate_HelpText',4);SignUp.ShowHelp('hide');" onblur="SignUp.HandleHintFocusOff(this,'AutoCSR_Questionnaire_Birthdate_HelpText',4);" onkeypress="return SignUp.OnlyNumbers(event)" onchange="SignUp.ValidateField(this)"><br>
                   </div>
                </div>
                
