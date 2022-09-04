@@ -20,12 +20,14 @@ CREATE TABLE IF NOT EXISTS Users (
 /* Open Live Messenger tables */
 CREATE TABLE IF NOT EXISTS MessengerFriends (
     /* TODO */
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     FirstFriendID INTEGER NOT NULL,
     SecondFriendID INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS MessengerNotifications (
     /* TODO */
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     ForUser INTEGER NOT NULL,
     NotificationTitle VARCHAR(128) NOT NULL,
     NotificationDescription TEXT NOT NULL
@@ -54,6 +56,7 @@ CREATE TABLE IF NOT EXISTS MessengerSettings (
 
 /* Open Live Mail tables */
 CREATE TABLE IF NOT EXISTS MailMessages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     emailFrom VARCHAR(128) NOT NULL,
     emailTo VARCHAR(128) NOT NULL,
     Subject TEXT NOT NULL,

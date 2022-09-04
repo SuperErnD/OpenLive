@@ -7,6 +7,8 @@ class DatabaseConnection {
     public function __construct() {
         require __DIR__.'/../conf/database.php';
         $this->db = new \PDO($DatabaseURL);
+        $this->db->setAttribute(\PDO::ATTR_EMULATE_PREPARES, 1);
+        $this->db->exec(file_get_contents(__DIR__ . "/../../install/initialize-database.sql"));
     }
 
     public function query($sql, $params){
@@ -19,7 +21,7 @@ class DatabaseConnection {
         if (!$query){
             throw new \LogicException("Query return is false");
         }
-        $query->execure();
+        $query->execute();
         return $query;
     }
 

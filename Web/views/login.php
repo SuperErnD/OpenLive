@@ -115,7 +115,7 @@
                                                                   <tr>
                                                                      <td id="rightTD">
                                                                         <div id="idDiv_Tile_Layout0">
-                                                                           <form name="f1" method="POST" target="_top">
+                                                                           <form name="f1" method="POST" target="_top" action="/api/account/login">
                                                                               <table cellpadding="0" cellspacing="0" style="width: 100%;">
                                                                                  <tbody>
                                                                                     <tr>
