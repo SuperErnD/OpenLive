@@ -8,6 +8,7 @@ class Database {
         require __DIR__.'/../conf/database.php';
         $this->db = new \PDO($DatabaseURL);
         $this->db->setAttribute(\PDO::ATTR_EMULATE_PREPARES, 1);
+        $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         $this->db->exec(file_get_contents(__DIR__ . "/../../install/initialize-database.sql"));
     }
 
@@ -15,7 +16,7 @@ class Database {
         $query=$this->db->prepare($sql);
         if (!empty($params)){
             foreach ($params as $key => $value) {
-                $this->db->bindValue(":".$key, $value);
+                $query->bindValue(":".$key, $value);
             }
         }
         if (!$query){

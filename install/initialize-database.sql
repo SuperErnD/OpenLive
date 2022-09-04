@@ -15,10 +15,10 @@ CREATE TABLE IF NOT EXISTS Users (
     gender VARCHAR(1) NOT NULL DEFAULT "m",
     country VARCHAR(2) NOT NULL DEFAULT "US",
     /* TODO */
-    Verificated BOOLEAN NOT NULL CHECK (Verificated IN (0, 1)),
+    Verificated BOOLEAN NOT NULL CHECK (Verificated IN (0, 1)) DEFAULT 0,
     /* TODO */
-    Disabled BOOLEAN NOT NULL CHECK (Disabled IN (0, 1)),
-    authToken TEXT NOT NULL
+    Disabled BOOLEAN NOT NULL CHECK (Disabled IN (0, 1)) DEFAULT 0
+    /* authToken TEXT NOT NULL */
 );
 
 /* Open Live Messenger tables */

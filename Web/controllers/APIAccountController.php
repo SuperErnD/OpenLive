@@ -1,7 +1,7 @@
 <?php
 
 namespace Diman\Openlive\controllers;
-use HashDigest\Digester;
+
 
 class APIAccountController extends BaseController {
     public function registerAction(){
