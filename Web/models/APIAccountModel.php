@@ -32,4 +32,19 @@ class APIAccountModel extends BaseModel{
         $this->db->query("INSERT INTO Users (email, name, surname, birthyear, password, gender, country) VALUES (:a, :b, :c, :d, :e, :f, :g)", $params);
         echo 1;
     }
+
+    public function login(){
+        $data=[
+            "email" => $_POST['login']
+        ];
+        $phash=$this->db->row("SELECT password FROM Users WHERE email=:email", $data)[0]["password"];
+        if(Digester::isHashValid($phash,$_POST['passwd'])){
+            $_SESSION['user'] = $this->jwt->encode([
+                "email" => $_POST['login'],
+                "passwd" => Digester::digest($_POST['passwd'])
+            ]);
+            return $this->redirect("/account/me");
+        }
+        echo "invalid";
+    }
 }

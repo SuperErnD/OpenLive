@@ -15,6 +15,10 @@ $routes = [
         'controller' => "Account",
         'action' => 'me'
     ],
+    "account/logout" => [
+        'controller' => "Account",
+        'action' => 'logout'
+    ],
     "" => [
         'controller' => 'Main',
         'action' => 'index'

@@ -7,5 +7,7 @@ class APIAccountController extends BaseController {
     public function registerAction(){
         $this->model->register();
     }
-    public function loginAction(){}
+    public function loginAction(){
+        $this->model->login();
+    }
 }

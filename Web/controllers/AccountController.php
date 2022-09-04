@@ -15,4 +15,9 @@ class AccountController extends BaseController {
     public function meAction(){
         echo $this->render("me", $this->model->getme());
     }
+
+    public function logoutAction(){
+        unset($_SESSION['user']);
+        return $this->redirect("/account/login");
+    }
 }
