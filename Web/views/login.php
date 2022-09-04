@@ -52,7 +52,7 @@
                                                                         <ul class="adv">
                                                                            <div style="position:relative">
                                                                               <div style="position:absolute;z-index:-1"><span class="cssIconMapClip clip16x16"><img id="imgBLT0" class="cssIconMapImg iconmap_blt16" src="https://web.archive.org/web/20170903112227/https://secure.shared.live.com/~Live.SiteContent.ID/~16.2.8/~/~/~/~/images/iconmap.png"></span></div>
-                                                                              <li id="LiBLT0"><b>Hotmail</b><br>The smart way to do email - fast, easy and reliable</li>
+                                                                              <li id="LiBLT0"><b>OpenMail</b><br>The smart way to do email - fast, easy and reliable</li>
                                                                            </div>
                                                                            <div style="position:relative">
                                                                               <div style="position:absolute;z-index:-1"><span class="cssIconMapClip clip16x16"><img id="imgBLT1" class="cssIconMapImg iconmap_blt8" src="https://web.archive.org/web/20170903112227/https://secure.shared.live.com/~Live.SiteContent.ID/~16.2.8/~/~/~/~/images/iconmap.png"></span></div>
@@ -60,7 +60,7 @@
                                                                            </div>
                                                                            <div style="position:relative">
                                                                               <div style="position:absolute;z-index:-1"><span class="cssIconMapClip clip16x16"><img id="imgBLT2" class="cssIconMapImg iconmap_blt10" src="https://web.archive.org/web/20170903112227/https://secure.shared.live.com/~Live.SiteContent.ID/~16.2.8/~/~/~/~/images/iconmap.png"></span></div>
-                                                                              <li id="LiBLT2"><b>SkyDrive</b><br>Free, password-protected online storage</li>
+                                                                              <li id="LiBLT2"><b>OpenDrive</b><br>Free, password-protected online storage</li>
                                                                            </div>
                                                                         </ul>
                                                                      </td>
@@ -71,7 +71,7 @@
                                                                            <tbody>
                                                                               <tr>
                                                                                  <td style="vertical-align: bottom;">
-                                                                                    <div class="cssSignupText">Don't have a Windows Live ID?</div>
+                                                                                    <div class="cssSignupText">Don't have a Open Live ID?</div>
                                                                                  </td>
                                                                                  <td title="Sign up for a Windows Live ID"><input type="button" name="reg" id="i0010" value="Sign up" class="cssSignupBtn" onclick="window.location = '/account/register'"></td>
                                                                               </tr>
