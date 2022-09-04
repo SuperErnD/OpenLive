@@ -1,6 +1,6 @@
 <?php
 namespace Diman\Openlive\core;
-use Diman\Openlive\core\DatabaseConnection;
+use Diman\Openlive\core\Database;
 
 class Router {
 
@@ -12,7 +12,7 @@ class Router {
     public function __construct($routers) {
         //var_dump($debugger);
         //$this->debugger = $debugger;
-        $this->db = new DatabaseConnection();
+        $this->db = new Database();
         foreach($routers as $key => $val) {
             $this->add($key, $val);
         }

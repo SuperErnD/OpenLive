@@ -2,7 +2,7 @@
 
 namespace Diman\Openlive\core;
 
-class DatabaseConnection {
+class Database {
     protected $db = null;
     public function __construct() {
         require __DIR__.'/../conf/database.php';
