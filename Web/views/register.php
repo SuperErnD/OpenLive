@@ -66,7 +66,7 @@
                   </p>
                </div>
             </div>
-            <form id="SignUpForm" method="post" action="" autocomplete="off" onsubmit="SignUp.DoPost();return false;">
+            <form id="SignUpForm" method="post" action="/api/account/register" autocomplete="off" onsubmit="SignUp.DoPost();return false;">
                <div class="helparea">
                   <div class="row">
                      <div class="capslockHolder">

@@ -3,7 +3,8 @@
     "description": "A new live for Windows Live",
     "type": "project",
     "require": {
-        "tracy/tracy": "^2.9"
+        "tracy/tracy": "^2.9",
+        "edwinmugendi/hashdigest": "^1.0"
     },
     "license": "MIT",
     "autoload": {
