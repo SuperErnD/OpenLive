@@ -11,6 +11,11 @@ class APIAccountModel extends BaseModel{
             return;
         }
         $this->register_db();
+        $_SESSION['user'] = $this->jwt->encode([
+            "email" => $_POST['imembernameeasi'],
+            "passwd" => Digester::digest($_POST['iPwd'])
+        ]);
+        $this->redirect("/account/me");
     }
 
     public function register_db(){

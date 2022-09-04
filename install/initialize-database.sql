@@ -17,8 +17,10 @@ CREATE TABLE IF NOT EXISTS Users (
     /* TODO */
     Verificated BOOLEAN NOT NULL CHECK (Verificated IN (0, 1)) DEFAULT 0,
     /* TODO */
-    Disabled BOOLEAN NOT NULL CHECK (Disabled IN (0, 1)) DEFAULT 0
+    Disabled BOOLEAN NOT NULL CHECK (Disabled IN (0, 1)) DEFAULT 0,
     /* authToken TEXT NOT NULL */
+
+    admin BOOLEAN NOT NULL CHECK (admin IN (0, 1)) DEFAULT 0
 );
 
 /* Open Live Messenger tables */

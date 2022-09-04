@@ -5,7 +5,7 @@ $acl = [
         'register'
     ],
     "authorize" => [
-        
+        'me'
     ],
     "guest" => [
         

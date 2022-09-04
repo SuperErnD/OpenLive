@@ -51,7 +51,7 @@ class BaseController {
     }
 
     public function isAuth(){
-        return isset($_SESSION['user']) && isset($_SESSION['token']);
+        return isset($_SESSION['user']);
     }
 
     public function isAdmin(){

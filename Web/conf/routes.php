@@ -11,6 +11,10 @@ $routes = [
         'controller' => 'Account',
         'action' => 'register'
     ],
+    "account/me" => [
+        'controller' => "Account",
+        'action' => 'me'
+    ],
     "" => [
         'controller' => 'Main',
         'action' => 'index'

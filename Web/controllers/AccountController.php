@@ -11,4 +11,8 @@ class AccountController extends BaseController {
     public function registerAction() {
         echo $this->render("register", []);
     }
+
+    public function meAction(){
+        echo $this->render("me", $this->model->getme());
+    }
 }
