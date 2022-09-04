@@ -1,7 +1,7 @@
 <?php
 $acl = [
     "all" => [
-        
+        'index'
     ],
     "authorize" => [
         
