@@ -1,11 +1,11 @@
 <?php
 $acl = [
     "all" => [
-        
+        'login',
         'register'
     ],
     "authorize" => [
-        'login',
+        
     ],
     "guest" => [
         
