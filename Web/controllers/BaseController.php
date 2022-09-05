@@ -58,11 +58,11 @@ class BaseController {
     }
 
     public function isAuth(){
-        return isset($_SESSION['user']);
+        return !empty($this->me->getme());
     }
 
     public function isAdmin(){
-        return $this->isAuth() && $_SESSION['user']['admin'];
+        return $this->isAuth() && $this->me->getme()['admin'];
     }
 
     public function isAcl($key){
