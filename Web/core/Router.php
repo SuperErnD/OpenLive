@@ -26,7 +26,8 @@ class Router {
     }
     
     public function match() {
-        $url = trim($_SERVER['REQUEST_URI'], '/');
+        //$url = trim($_SERVER['REQUEST_URI'], '/');
+        $url = $this->getURI();
         // Mini-CDN :D
         if(str_starts_with($url, 'assets')) {
             
@@ -77,4 +78,19 @@ class Router {
             echo "404 Not Found";
         } 
     } // скоро
+
+    private function getURI()
+    {
+        $uri = '';
+
+        if (!empty($_SERVER['REQUEST_URI'])) {
+            $uri = $_SERVER['REQUEST_URI'];
+        }
+
+        if (($cutoff = strpos($uri, '?')) !== false) {
+            $uri = substr($uri, 0, $cutoff);
+        }
+        return trim($uri, '/');
+        
+    }
 }
