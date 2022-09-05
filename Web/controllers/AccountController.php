@@ -14,7 +14,7 @@ class AccountController extends BaseController {
     }
 
     public function meAction(){
-        echo $this->render("me", $this->me->getme());
+        echo $this->render("me", ["me" => $this->me->getme()]);
     }
 
     public function logoutAction(){

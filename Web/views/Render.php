@@ -7,6 +7,7 @@ class Render{
         $this->path=__DIR__ . "/" . $name . ".phtml";
     }
     public function render($data){
+        extract($data);
         if (file_exists($this->path)){
             require $this->path;
         } else{
