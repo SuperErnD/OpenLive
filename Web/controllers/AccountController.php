@@ -6,11 +6,11 @@ class AccountController extends BaseController {
 
 
     public function loginAction() {
-        echo $this->render("login", []);
+        echo $this->render("login", ["query"=>$_GET]);
     }
 
     public function registerAction() {
-        echo $this->render("register", []);
+        echo $this->render("register", ["query"=>$_GET]);
     }
 
     public function meAction(){

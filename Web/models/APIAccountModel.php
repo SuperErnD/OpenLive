@@ -15,7 +15,15 @@ class APIAccountModel extends BaseModel{
             "email" => $_POST['imembernameeasi'],
             "passwd" => Digester::digest($_POST['iPwd'])
         ]);
-        $this->redirect("/account/me");
+        $this->redir();
+        
+    }
+    public function redir(){
+        if (isset($_GET['next'])){
+            $this->redirect($_GET['next']);
+        } else {
+            $this->redirect("/account/me");
+        }
     }
 
     public function register_db(){
@@ -43,7 +51,7 @@ class APIAccountModel extends BaseModel{
                 "email" => $_POST['login'],
                 "passwd" => Digester::digest($_POST['passwd'])
             ]);
-            return $this->redirect("/account/me");
+            return $this->redir();
         }
         echo "invalid";
     }

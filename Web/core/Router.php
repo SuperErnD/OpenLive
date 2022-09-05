@@ -52,7 +52,11 @@ class Router {
         if($this->match()){
             if($this->file) {
                 header('Content-Description: File Transfer');
-                header('Content-Type: application/octet-stream');
+                $type="application/octet-stream";
+                if (str_ends_with($this->file, ".css")){
+                    $type="text/css";
+                }
+                header('Content-Type: ' . $type);
                 header('Content-Disposition: attachment; filename="'.basename($this->file).'"');
                 header('Expires: 0');
                 header('Cache-Control: must-revalidate');
