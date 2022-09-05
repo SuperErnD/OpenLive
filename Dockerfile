@@ -2,7 +2,7 @@ FROM mariadb:10.8.4
 FROM trafex/php-nginx:latest
 
 ENV MYSQL_ROOT_PASSWORD=HelloOpenLive!
-
+ENV MYSQL_DATABASE=OpenLive
 COPY . /app
 COPY ./NginxSite.conf /etc/nginx/nginx.conf
 COPY --from=composer /usr/bin/composer /usr/bin/composer
