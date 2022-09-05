@@ -1,5 +1,6 @@
 Web/storage/database.db
 Web/storage/sessions/*
+composer.lock
 vendor
 start.sh
 start.bat
