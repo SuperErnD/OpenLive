@@ -71,6 +71,11 @@ class Router {
                 if (method_exists($path, $action)){
                     $controller = new $path($this->params, $this->db, $this->jwt);
                     $controller->$action();
+                    if (file_exists(".git/HEAD")){
+                        $head = trim(substr(file_get_contents('.git/HEAD'), 4));
+                        $hash = trim(file_get_contents('.git/'. $head));
+                        echo "<br>Current commit sha256: ".$hash;
+                    }
                 } else {
                     exit("Not Found Action " . strval($action)); // ошибку дает, странно
                 }
