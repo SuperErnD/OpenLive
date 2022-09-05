@@ -1,24 +1,30 @@
 <?php
 namespace Diman\Openlive\controllers;
 use Diman\Openlive\views\Render;
+use Diman\Openlive\core\me;
 
 
 class BaseController {
-    protected $db = null;
+    protected $db    = null;
     protected $route = null;
     protected $model = null;
-    protected $acl = null;
-    protected $jwt = null;
+    protected $acl   = null;
+    protected $jwt   = null;
+    protected $me    = null;
 
     public function __construct($route, $db, $jwt) {
         $this->route = $route;
         $this->db = $db;
         $this->jwt = $jwt;
+        $this->me=new me($this->db, $this->jwt);
         if(!$this->checkAcl()){
-            echo $this->render("errors/403", []);
-            http_response_code(403);
-            exit(403);
-
+            if(!$this->isAuth() && ($this->isAcl('authorize') or $this->isAcl("admin"))){
+                return $this->redirect("/account/login");
+            }else {
+                echo $this->render("errors/403", []);
+                http_response_code(403);
+                exit(403);
+            }
         }
         $this->model = $this->loadModel($route['controller']);
     }
@@ -38,14 +44,15 @@ class BaseController {
         }
         if ($this->isAuth() && $this->isAcl('authorize')){
             return true;
-        }
+        } 
+        
         if (!$this->isAuth() && $this->isAcl('guest')){
             return true;
         }
         if ($this->isAdmin() && $this->isAcl("admin")){
             return true;
         }
-
+        
         return false;
 
     }
