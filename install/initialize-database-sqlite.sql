@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS MessengerMessages (
     /* TODO */
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     FromUser INTEGER NOT NULL,
-    For INTEGER NOT NULL,
+    ToID INTEGER NOT NULL,
     Content VARCHAR(2048) NOT NULL,
     isGroupMessage BOOLEAN NOT NULL CHECK (isGroupMessage IN (0, 1))
 );
