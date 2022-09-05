@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS ApiKeys (
 );
 
 CREATE TABLE IF NOT EXISTS Users (
-    id INTEGER PRIMARY KEY SERIAL,
+    id INTEGER PRIMARY KEY,
     email VARCHAR(128) NOT NULL DEFAULT "deleted@openlive.org",
     name VARCHAR(64) NOT NULL,
     surname VARCHAR(64) NOT NULL,
@@ -26,14 +26,14 @@ CREATE TABLE IF NOT EXISTS Users (
 /* Open Live Messenger tables */
 CREATE TABLE IF NOT EXISTS MessengerFriends (
     /* TODO */
-    id INTEGER PRIMARY KEY SERIAL,
+    id INTEGER PRIMARY KEY,
     FirstFriendID INTEGER NOT NULL,
     SecondFriendID INTEGER NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS MessengerNotifications (
     /* TODO */
-    id INTEGER PRIMARY KEY SERIAL,
+    id INTEGER PRIMARY KEY,
     ForUser INTEGER NOT NULL,
     NotificationTitle VARCHAR(128) NOT NULL,
     NotificationDescription TEXT NOT NULL
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS MessengerNotifications (
 
 CREATE TABLE IF NOT EXISTS MessengerMessages (
     /* TODO */
-    id INTEGER PRIMARY KEY SERIAL,
+    id INTEGER PRIMARY KEY,
     FromUser INTEGER NOT NULL,
     For INTEGER NOT NULL,
     Content VARCHAR(2048) NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS MessengerMessages (
 );
 
 CREATE TABLE IF NOT EXISTS MessengerGroups (
-    id INTEGER PRIMARY KEY SERIAL,
+    id INTEGER PRIMARY KEY,
     owner INTEGER NOT NULL DEFAULT -1,
     admins TEXT NOT NULL DEFAULT '[]',
     members TEXT NOT NULL DEFAULT '[]'
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS MessengerSettings (
 
 /* Open Live Mail tables */
 CREATE TABLE IF NOT EXISTS MailMessages (
-    id INTEGER PRIMARY KEY SERIAL,
+    id INTEGER PRIMARY KEY,
     emailFrom VARCHAR(128) NOT NULL,
     emailTo VARCHAR(128) NOT NULL,
     Subject TEXT NOT NULL,
