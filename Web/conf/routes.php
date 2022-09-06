@@ -24,6 +24,16 @@ $routes = [
         'action' => 'index'
     ],
 
+    // Legaly
+    "legaly/terms" => [
+        'controller' => "Main",
+        'action' => 'tos'
+    ],
+    "legaly/privacy" => [
+        'controller' => "Main",
+        'action' => 'privacy'
+    ],
+    
     // Back-End
     
     "api/account/login" => [
