@@ -7,11 +7,11 @@ class MainController extends BaseController{
         echo $this->render("index", []);
     }
     
-    public function ToSAction() {
+    public function tosAction() {
         echo $this->render("legaly/tos", []);
     }
     
-    public function PrivacyAction() {
+    public function privacyAction() {
         echo $this->render("legaly/privacy", []);
     }
 }
