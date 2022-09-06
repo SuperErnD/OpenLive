@@ -77,10 +77,10 @@ class Router {
                         echo "<br>Current commit sha256: ".$hash;
                     }
                 } else {
-                    exit("Not Found Action " . strval($action)); // ошибку дает, странно
+                    throw new \LogicException("Not Found Action " . strval($action)); // ошибку дает, странно
                 }
             } else {
-                exit("Not Found Controller " . strval($path));
+                throw new \LogicException("Not Found Controller " . strval($path));
             }
 
         } else {
