@@ -8,13 +8,12 @@ if (!is_null($deleteId)) {
    $delete_user($deleteId);
 }
 
-if(!empty($_POST) && isset($_GET['edit_id']) && (int) $_GET['edit_id'] > -1 &&
-    strlen($_GET['edit_id']) == strlen((int) $_GET['edit_id'])
-){
+$editId = $_GET['edit_id'] ?? null; 
+if(!empty($_POST) && !is_null($editId)){
     if (!isset($_POST['admin'])){
         $_POST['admin']='off';
     }
-    $edit_user($_GET['edit_id']);
+    $edit_user($editId);
     header("Location: ". $_SERVER['SCRIPT_NAME'] . "?action=users");
 }
 
