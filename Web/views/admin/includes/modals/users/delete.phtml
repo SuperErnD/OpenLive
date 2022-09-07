@@ -1,0 +1,20 @@
+<?php function getDeleteModal($id) { ?>
+
+<div class="modal fade" id="deleteModal-<?php echo $id ?>" tabindex="-1" aria-labelledby="Delete user" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete user</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        you accept deleting this user?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <a type="button" class="btn btn-primary" href="<?php echo $_SERVER['SCRIPT_NAME'];?>?action=users&delete_id=<?php echo $id; ?>">yes</a>
+      </div>
+    </div>
+  </div>
+</div>
+<?php } ?>
