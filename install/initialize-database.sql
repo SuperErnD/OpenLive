@@ -69,3 +69,5 @@ CREATE TABLE IF NOT EXISTS MailMessages (
     Content TEXT NOT NULL
 );
 
+--add admin
+INSERT IGNORE INTO Users (id, name, surname, email, password, admin) VALUES (1, "admin", "admin", "admin@localhost", "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918", 1)
