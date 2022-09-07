@@ -1,4 +1,5 @@
 # Open Live
+[![Sonar Cube Static Analysis](https://sonarcloud.io/api/project_badges/measure?project=aidgames_OpenLive&metric=ncloc)](https://sonarcloud.io/dashboard?id=aidgames_OpenLive)
 A new live for Windows Live<br>
 We're sorry, install no available yet
 
