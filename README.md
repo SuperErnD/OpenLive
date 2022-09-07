@@ -2,11 +2,6 @@
 A new live for Windows Live<br>
 We're sorry, install no available yet
 
-# Open Live
-
-A new live for Windows Live<br>
-We're sorry, install no available yet
-
 ## Requirements
 
 [php 7+](https://www.php.net)
