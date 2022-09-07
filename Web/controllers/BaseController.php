@@ -58,7 +58,8 @@ class BaseController {
     }
 
     public function isAuth(){
-        return !empty($this->me->getme());
+        $me = $this->me->getme();
+        return isset($me) and !empty($me);
     }
 
     public function isAdmin(){

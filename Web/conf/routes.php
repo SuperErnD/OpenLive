@@ -48,4 +48,10 @@ $routes = [
         'controller' => 'APIGeneral',
         'action' => 'about'
     ],
+
+    // Admin panel
+    "admin" => [
+        "controller" => "Admin",
+        "action" => "index"
+    ]
 ];

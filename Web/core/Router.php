@@ -55,6 +55,8 @@ class Router {
                 $type="application/octet-stream";
                 if (str_ends_with($this->file, ".css")){
                     $type="text/css";
+                } else if (str_ends_with($this->file, ".js")){
+                    $type="application/javascript";
                 }
                 header('Content-Type: ' . $type);
                 header('Content-Disposition: attachment; filename="'.basename($this->file).'"');
@@ -74,7 +76,7 @@ class Router {
                     if (file_exists(".git/HEAD")){
                         $head = trim(substr(file_get_contents('.git/HEAD'), 4));
                         $hash = trim(file_get_contents('.git/'. $head));
-                        echo "<br>Current commit sha256: ".$hash;
+                        echo "<meta name=\"commit\" content=\"". $hash . "\">";
                     }
                 } else {
                     throw new \LogicException("Not Found Action " . strval($action)); // ошибку дает, странно
