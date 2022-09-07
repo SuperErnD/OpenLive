@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-inverse white scrolling-navbar">
             <div class="container-fluid">
-                <a href="#" class="navbar-brand waves-effect"><strong class="blue-text">
+                <a href="https://github.com/SuperErnD/OpenLive" class="navbar-brand waves-effect"><strong class="blue-text">
                 <img src="/assets/img/openlive.png" alt="" class="img-fluid">
                 </strong></a>
                 <button class="navbar-toggler" type="button"
@@ -27,10 +27,10 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a href="#" class="nav-link waves-effect">Home</a>
+                            <a href="<?php echo $_SERVER['SCRIPT_NAME'];?>" class="nav-link waves-effect">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link waves-effect">Users</a>
+                            <a href="<?php echo $_SERVER['SCRIPT_NAME'];?>?action=users" class="nav-link waves-effect">Users</a>
                         </li>
                     </ul>
                 </div>
@@ -41,8 +41,8 @@
                 <img src="/assets/img/openlive-big.png" alt="" class="img-fluid">
             </a>
             <div class="list-group list-group-flush">
-                <a href="" class="list-group-item waves-effect"><i class="fa fa-pie-chart"></i>Home</a>
-                <a href="" class="list-group-item waves-effect"><i class="fa fa-users"></i>Users</a>
+                <a href="<?php echo $_SERVER['SCRIPT_NAME'];?>" class="list-group-item waves-effect"><i class="fa fa-pie-chart"></i>Home</a>
+                <a href="<?php echo $_SERVER['SCRIPT_NAME'];?>?action=user" class="list-group-item waves-effect"><i class="fa fa-users"></i>Users</a>
             </div>
         </div>
     </header>
@@ -51,6 +51,7 @@
             <?php if (isset($_GET['action'])) {
                 if ($_GET['action'] == 'users'){ 
                     require __DIR__ . "/includes/users.php";
+                    
                 }} else { 
                     require __DIR__ . "/includes/home.php";
                 } ?>
