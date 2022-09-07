@@ -8,12 +8,15 @@
     <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/mdb.min.css" rel="stylesheet">
+    <link href="/assets/css/admin.css" rel="stylesheet">
 </head>
-<body class="gray">
+<body class="white">
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-inverse white scrolling-navbar">
             <div class="container-fluid">
-                <a href="#" class="navbar-brand waves-effect"><strong class="blue-text">Logo</strong></a>
+                <a href="#" class="navbar-brand waves-effect"><strong class="blue-text">
+                <img src="/assets/img/openlive.png" alt="" class="img-fluid">
+                </strong></a>
                 <button class="navbar-toggler" type="button"
                     data-bs-target="#navbarContent" data-bs-toggle="collapse"
                     aria-controls="navbarContent" aria-expended="false"
@@ -35,10 +38,24 @@
         </nav>
         <div class="sidebar-fixed position-fixed">
             <a href="https://github.com/SuperErnD/OpenLive" class="logo-wrapper waves-effect">
-                <img src="/assets/img/openlive.png" alt="" class="img-fluid">
+                <img src="/assets/img/openlive-big.png" alt="" class="img-fluid">
             </a>
+            <div class="list-group list-group-flush">
+                <a href="" class="list-group-item waves-effect"><i class="fa fa-pie-chart"></i>Home</a>
+                <a href="" class="list-group-item waves-effect"><i class="fa fa-users"></i>Users</a>
+            </div>
         </div>
     </header>
+    <main class="pt-5 max-lg-5">
+        <div class="container-fluid mt-5">
+            <?php if (isset($_GET['action'])) {
+                if ($_GET['action'] == 'users'){ 
+                    require __DIR__ . "/includes/users.php";
+                }} else { 
+                    require __DIR__ . "/includes/home.php";
+                } ?>
+        </div>
+    </main>
     <script src="/assets/js/jquery-3.6.1.min.js"></script>
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/mdb.min.js"></script>
