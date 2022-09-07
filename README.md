@@ -20,7 +20,7 @@ run start.sh or start.bat<br>
 now openlive runned on [127.0.0.1:8080](http://127.0.0.1:8080) (clickable)
 
 ## Admin
-after first run openlive create user with
+after first run openlive automatical created admin user
 ```
 email: admin@localhost
 password: admin
