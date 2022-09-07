@@ -6,7 +6,7 @@ class AdminController extends BaseController{
     public function indexAction() {
         echo $this->render("admin/index", [
             "users" => $this->me->get_all(),
-            "model" => $this->model
+            "delete_user" => [$this->model, "delete_user"]
         ]);
     }
 }

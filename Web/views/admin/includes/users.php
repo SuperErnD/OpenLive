@@ -3,7 +3,7 @@
 require __DIR__ . "/modals/users/delete.phtml";
 
 if(isset($_GET['delete_id'])){
-    $model->delete_user(((int) $_GET['delete_id']));
+    delete_user(((int) $_GET['delete_id']));
     header("Location: ". $_SERVER['SCRIPT_NAME'] . "?action=users");
 }
 
