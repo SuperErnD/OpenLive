@@ -1,6 +1,6 @@
 Web/storage/database.db
 Web/storage/sessions/sess_*
-Web/storage/sessions/tracy_*
+Web/storage/sessions/tracy-*
 composer.lock
 vendor
 start.sh
