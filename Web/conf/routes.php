@@ -26,11 +26,11 @@ $routes = [
 
     // Legaly
     "legaly/terms" => [
-        'controller' => "Main",
+        'controller' => "Legaly",
         'action' => 'tos'
     ],
     "legaly/privacy" => [
-        'controller' => "Main",
+        'controller' => "Legaly",
         'action' => 'privacy'
     ],
     
