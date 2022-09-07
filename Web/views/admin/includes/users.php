@@ -3,12 +3,14 @@
 require __DIR__ . "/modals/users/delete.phtml";
 require __DIR__ . "/modals/users/edit.phtml";
 
-if(isset($_GET['delete_id'])){
-    $delete_user(((int) $_GET['delete_id']));
-    header("Location: ". $_SERVER['SCRIPT_NAME'] . "?action=users");
+$deleteId = $_GET['delete_id'] ?? null; 
+if (!is_null($deleteId)) {
+   $delete_user($deleteId);
 }
 
-if(!empty($_POST) && isset($_GET['edit_id']) && (int) $_GET['edit_id'] > -1){
+if(!empty($_POST) && isset($_GET['edit_id']) && (int) $_GET['edit_id'] > -1 &&
+    strlen($_GET['edit_id']) == strlen((int) $_GET['edit_id'])
+){
     if (!isset($_POST['admin'])){
         $_POST['admin']='off';
     }
