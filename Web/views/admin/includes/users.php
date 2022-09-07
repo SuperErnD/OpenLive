@@ -3,8 +3,8 @@
 require __DIR__ . "/modals/users/delete.phtml";
 
 if(isset($_GET['delete_id'])){
-    echo "delete";
-    exit();
+    $model->delete_user(((int) $_GET['delete_id']));
+    header("Location: ". $_SERVER['SCRIPT_NAME'] . "?action=users");
 }
 
 ?>
@@ -20,7 +20,7 @@ if(isset($_GET['delete_id'])){
     </thead>
     <tbody>
         <?php foreach ($users as $id => $user) { ?>
-            <?php echo getDeleteModal($id + 1); ?>
+            <?php echo getDeleteModal($user['id']); ?>
             <tr>
                 <th scope="row"><?php echo $id+1; ?></th>
                 <td><?php echo $user['name']; ?></td>
@@ -28,7 +28,7 @@ if(isset($_GET['delete_id'])){
                 <td><?php echo $user['email']; ?></td>
                 <td>
                     <button class="btn-fa"><i class="fa fa-gear"></i></button>
-                    <button class="btn-fa" data-bs-toggle="modal" data-bs-target="#deleteModal-<?php echo $id+1?>" type="button"><i class="fa fa-trash"></i></button>
+                    <button class="btn-fa" data-bs-toggle="modal" data-bs-target="#deleteModal-<?php echo $user['id']?>" type="button"><i class="fa fa-trash"></i></button>
 
                 </td>
             </tr>
