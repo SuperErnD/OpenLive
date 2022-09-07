@@ -11,15 +11,17 @@ class AdminModel extends BaseModel{
         $sqldata=[];
         foreach ($_POST as $key => $value) {
             if (!\Diman\Openlive\core\str_starts_with($_POST[$key], "_")){
-                if (!empty($_POST[$key])){
+                if ($key == "admin"){
+                    $newdata[$key] = (int) ($value == "on");
+                } else{
                     $newdata[$key] = $value;
                 }
+                $sqldata[$key] = ":".$key;
             }
         }
-        foreach ($newdata as $key => $_) {
-            $sqldata[$key] = ":".$key;
-        }
         $query="UPDATE Users SET " . urldecode(http_build_query($sqldata, '', ', ')) . " WHERE id=". (int) $id;
+        //var_dump($newdata);
+        //exit();
         $this->db->query($query, $newdata);
     }
 }

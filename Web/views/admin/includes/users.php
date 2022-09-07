@@ -9,6 +9,9 @@ if(isset($_GET['delete_id'])){
 }
 
 if(!empty($_POST) && isset($_GET['edit_id']) && (int) $_GET['edit_id'] > -1){
+    if (!isset($_POST['admin'])){
+        $_POST['admin']='off';
+    }
     $edit_user($_GET['edit_id']);
     header("Location: ". $_SERVER['SCRIPT_NAME'] . "?action=users");
 }
@@ -27,7 +30,7 @@ if(!empty($_POST) && isset($_GET['edit_id']) && (int) $_GET['edit_id'] > -1){
     <tbody>
         <?php foreach ($users as $id => $user) { ?>
             <?php echo getDeleteModal($user['id']); ?>
-            <?php echo getEditModal($user['id']); ?>
+            <?php echo getEditModal($user['id'], $user); ?>
             <tr>
                 <th scope="row"><?php echo $id+1; ?></th>
                 <td><?php echo $user['name']; ?></td>
