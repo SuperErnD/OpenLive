@@ -1,0 +1,29 @@
+<?php function getEditModal($id){?>
+<div class="modal fade" id="editModal-<?php echo $id ?>" tabindex="-1" aria-labelledby="Edit user" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModal-<?php echo $id ?>">Edit user</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/admin/?action=users&edit_id=<?php echo $id ?>" method="POST">
+          <div class="mb-3">
+            <label for="recipient-name" class="col-form-label">name:</label>
+            <input type="text" class="form-control" id="new-name" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">surname:</label>
+            <textarea class="form-control" id="new-surname" name="surname"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+            <button type="submit" class="btn btn-primary">Save</a>
+          </div>
+</form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<?php } ?>
