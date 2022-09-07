@@ -18,6 +18,12 @@
     min-height: 50px;
 }
 
+.btn-fa{
+    outline: none;
+    border: 0;
+    
+}
+
 @media (min-width: 1200px){
     .navbar, .page-footer, main{
         padding-left: 270px;

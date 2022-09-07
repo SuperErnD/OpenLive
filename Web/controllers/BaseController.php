@@ -1,7 +1,7 @@
 <?php
 namespace Diman\Openlive\controllers;
 use Diman\Openlive\views\Render;
-use Diman\Openlive\core\me;
+use Diman\Openlive\core\users;
 
 
 class BaseController {
@@ -16,7 +16,7 @@ class BaseController {
         $this->route = $route;
         $this->db = $db;
         $this->jwt = $jwt;
-        $this->me=new me($this->db, $this->jwt);
+        $this->me=new users($this->db, $this->jwt);
         if(!$this->checkAcl()){
             if(!$this->isAuth() && ($this->isAcl('authorize') or $this->isAcl("admin"))){
                 return $this->redirect("/account/login");

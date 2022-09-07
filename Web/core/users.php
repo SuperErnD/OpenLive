@@ -1,6 +1,6 @@
 <?php
 namespace Diman\Openlive\core;
-class me{
+class users{
     protected $db = null;
     protected $jwt = null;
     public function __construct($db, $jwt){
@@ -20,5 +20,8 @@ class me{
         }
         //var_dump($db_data);
         return $db_data;
+    }
+    public function get_all(){
+        return $this->db->row("SELECT * FROM Users", []);
     }
 }
