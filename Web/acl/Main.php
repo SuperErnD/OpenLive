@@ -1,10 +1,10 @@
 <?php
 $acl = [
     "all" => [
-        'index'
+        
     ],
     "authorize" => [
-        
+        'index'
     ],
     "guest" => [
         
