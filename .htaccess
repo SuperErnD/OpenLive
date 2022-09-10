@@ -1,4 +1,3 @@
-php_value display_errors On
 AddDefaultCharset utf-8
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
