@@ -7,7 +7,7 @@
         "edwinmugendi/hashdigest": "^1.0",
         "firebase/php-jwt": "^6.3"
     },
-    "license": "MIT",
+    "license": "GPL v2.0",
     "autoload": {
         "psr-4": {
             "Diman\\Openlive\\": "Web/"
