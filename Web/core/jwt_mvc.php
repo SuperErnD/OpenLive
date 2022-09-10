@@ -2,6 +2,7 @@
 namespace Diman\Openlive\core;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
+use Firebase\JWT\SignatureInvalidException;
 
 class jwt_mvc{
     private $key=null;
@@ -14,6 +15,12 @@ class jwt_mvc{
         return JWT::encode($data, $this->key, 'HS256');
     }
     public function decode($jwt){
-        return json_decode(json_encode(JWT::decode($jwt, new Key($this->key, 'HS256'))), true);
+        try {
+            $jwt=JWT::decode($jwt, new Key($this->key, 'HS256'));
+        } catch (SignatureInvalidException $th) {
+            return null;
+        }
+        
+        return json_decode(json_encode($jwt));
     }
 }
