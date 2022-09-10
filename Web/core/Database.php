@@ -9,7 +9,7 @@ class Database {
         $this->db = new \PDO($DatabaseURL);
         $this->db->setAttribute(\PDO::ATTR_EMULATE_PREPARES, 1);
         $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-        $this->db->exec(file_get_contents(__DIR__ . "/../../install/initialize-database.sql"));
+        $this->db->exec(file_get_contents(__DIR__ . "/../../install/initialize-database-{$DatabaseType}.sql"));
     }
 
     public function query($sql, $params){
