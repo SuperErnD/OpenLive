@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS MessengerGroups (
 
 CREATE TABLE IF NOT EXISTS MessengerSettings (
     userId INTEGER NOT NULL,
-    language VARCHAR(4) NOT NULL DEFAULT "en_US"
+    language VARCHAR(5) NOT NULL DEFAULT "en_US"
 );
 
 /* Open Live Mail tables */
