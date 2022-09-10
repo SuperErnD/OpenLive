@@ -3,6 +3,9 @@
 A new live for Windows Live<br>
 We're sorry, install no available yet
 
+## Test server
+[Test server 1](http://openlive.epizy.com)
+
 ## Requirements
 
 [php 7+](https://www.php.net)
