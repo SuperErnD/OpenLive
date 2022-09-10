@@ -27,10 +27,10 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a href="<?php echo $_SERVER['SCRIPT_NAME'];?>" class="nav-link waves-effect">Home</a>
+                            <a href="<?php echo $_SERVER['REDIRECT_URL'];?>" class="nav-link waves-effect">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="<?php echo $_SERVER['SCRIPT_NAME'];?>?action=users" class="nav-link waves-effect">Users</a>
+                            <a href="<?php echo $_SERVER['REDIRECT_URL'];?>?action=users" class="nav-link waves-effect">Users</a>
                         </li>
                     </ul>
                 </div>
@@ -41,8 +41,8 @@
                 <img src="/assets/img/openlive-big.png" alt="" class="img-fluid">
             </a>
             <div class="list-group list-group-flush">
-                <a href="<?php echo $_SERVER['SCRIPT_NAME'];?>" class="list-group-item waves-effect"><i class="fa fa-pie-chart"></i>Home</a>
-                <a href="<?php echo $_SERVER['SCRIPT_NAME'];?>?action=users" class="list-group-item waves-effect"><i class="fa fa-users"></i>Users</a>
+                <a href="<?php echo $_SERVER['REDIRECT_URL'];?>" class="list-group-item waves-effect"><i class="fa fa-pie-chart"></i>Home</a>
+                <a href="<?php echo $_SERVER['REDIRECT_URL'];?>?action=users" class="list-group-item waves-effect"><i class="fa fa-users"></i>Users</a>
             </div>
         </div>
     </header>
