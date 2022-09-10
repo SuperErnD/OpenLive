@@ -1,1 +1,1 @@
-php -S 0.0.0.0:8080 htdocs/index.php -t Web
+php -S 0.0.0.0:8080 Web/index.php -t Web

@@ -1,7 +1,12 @@
-<?php 
-require __DIR__ . "/../vendor/autoload.php";
+<?php
 
-require __DIR__ . "/autoload.php";
+$phpversion = (float)phpversion();
+if ($phpversion < 8.0 && $phpversion >= 7.0){
+	require __DIR__ . "/core/php7fix.php";
+} elseif ($phpversion < 7.0) {
+    exit("We sorry, you php version: $phpversion not supported");
+}
+require __DIR__ . "/../vendor/autoload.php";
 
 require __DIR__ . "/conf/routes.php";
 
