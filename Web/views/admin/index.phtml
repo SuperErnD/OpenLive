@@ -22,7 +22,6 @@
                     aria-controls="navbarContent" aria-expended="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                    
                 </button>
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mr-auto">
@@ -51,10 +50,11 @@
             <?php if (isset($_GET['action'])) {
                 if ($_GET['action'] == 'users'){ 
                     require __DIR__ . "/includes/users.php";
-                    
-                }} else { 
-                    require __DIR__ . "/includes/home.php";
-                } ?>
+                    return;
+		}
+                }
+                require __DIR__ . "/includes/home.php";
+                ?>
         </div>
     </main>
     <script src="/assets/js/jquery-3.6.1.min.js"></script>
