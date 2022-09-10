@@ -2,7 +2,7 @@ Web/storage/database.db
 Web/storage/sessions/sess_*
 Web/storage/sessions/tracy-*
 
-Web/conf/jwt.txt
+Web/conf/*.txt
 
 composer.lock
 vendor
