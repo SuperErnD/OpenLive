@@ -1,10 +1,4 @@
 /* System */
-CREATE TABLE IF NOT EXISTS ApiKeys (
-    apikey VARCHAR(60) NOT NULL,
-    userId INTEGER NOT NULL,
-    FOREIGN KEY(userId) REFERENCES Users(userId)
-);
-
 CREATE TABLE IF NOT EXISTS Users (
     id INTEGER PRIMARY KEY,
     email VARCHAR(128) NOT NULL DEFAULT "deleted@openlive.org",
@@ -22,6 +16,14 @@ CREATE TABLE IF NOT EXISTS Users (
 
     admin BOOLEAN NOT NULL DEFAULT 0
 );
+
+CREATE TABLE IF NOT EXISTS ApiKeys (
+    apikey VARCHAR(60) NOT NULL,
+    uid INTEGER NOT NULL,
+    FOREIGN KEY(uid) REFERENCES Users(id)
+);
+
+
 
 /* Open Live Messenger tables */
 CREATE TABLE IF NOT EXISTS MessengerFriends (
@@ -57,7 +59,7 @@ CREATE TABLE IF NOT EXISTS MessengerGroups (
 
 CREATE TABLE IF NOT EXISTS MessengerSettings (
     userId INTEGER NOT NULL,
-    language VARCHAR(4) NOT NULL DEFAULT "en_US"
+    language VARCHAR(5) NOT NULL DEFAULT "en_US"
 );
 
 /* Open Live Mail tables */
